@@ -81,7 +81,7 @@ abstract class AbstractResultMatrix<T> {
             final int colIdx = iterator.getCol();
             final int rowIdx = iterator.getRow();
 
-            this.setCell(rowIdx, rowspan, colIdx, colspan, cellMatrix, cell);
+            this.seC(rowIdx, rowspan, colIdx, colspan, cellMatrix, cell);
 
             if (StandardRoles.TH.equals(role)) {
                 final byte[] id = getElementId(cell);
@@ -110,7 +110,7 @@ abstract class AbstractResultMatrix<T> {
     }
 
     private void setRowValue(int row, int rowSpan, List<Boolean> arr, boolean value) {
-        setCell(row, rowSpan, 0, this.cols, arr, value);
+        seC(row, rowSpan, 0, this.cols, arr, value);
     }
 
 
@@ -183,7 +183,7 @@ abstract class AbstractResultMatrix<T> {
         }
     }
 
-    private <Z> void setCell(int row, int rowSpan, int col, int colSpan, List<Z> arr, Z value) {
+    private <Z> void seC(int row, int rowSpan, int col, int colSpan, List<Z> arr, Z value) {
         for (int i = row; i < row + rowSpan; i++) {
             for (int j = col; j < col + colSpan; j++) {
                 arr.set(i * this.cols + j, value);
@@ -192,7 +192,7 @@ abstract class AbstractResultMatrix<T> {
     }
 
     private void setColumnValue(int col, int colSpan, List<Boolean> arr, boolean value) {
-        setCell(0, this.rows, col, colSpan, arr, value);
+        seC(0, this.rows, col, colSpan, arr, value);
     }
 
     private boolean hasValidHeaderIds(T cell, Set<String> knownIds) {
