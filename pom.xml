@@ -113,6 +113,8 @@
     <sonar.dependencyCheck.reportPath>target/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
     <surefire.version>3.0.0-M3</surefire.version>
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
+    <sonar.organization>kartuz</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
